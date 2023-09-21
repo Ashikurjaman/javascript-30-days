@@ -1,0 +1,1 @@
+let web = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM','Oracle', 'Amazon','lll' ]
