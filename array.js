@@ -56,12 +56,12 @@ console.log(found); */
 const  itCompany = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM','Oracle', 'Amazon','lll' ];
 
 // Remove the first IT company from the array
-
+/* 
 let cl = itCompany.splice();
 console.log(itCompany);
 
 let c=itCompany.shift();
-// console.log(itCompany);
+// console.log(itCompany); */
 
 
 
@@ -92,8 +92,24 @@ if (itCompany.length % 2 === 1){
 console.log(itCompany); */
  
 
+/*  loop */
+
+// Develop a small script which generate a six characters random id
+// const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+// let newArray ='';
 
 
+// for (let i = 0; i < 10; i++) {
+   
+//     const cl=characters.length;
+//     var r =(Math.floor(Math.random()*cl));
+//     if(newArray.indexOf(r) === -1){
+//         newArray +=characters.charAt(r);
+//     }
+    
+    
+// }
+// console.log(newArray);
 
 
 
@@ -165,3 +181,86 @@ console.log(itCompany.reverse()); */
 // console.log(fruits.splice(3, 1));
 
 
+
+
+// const characters = '0123456789ABCDEF';
+let newArray ='';
+
+
+/* for (let i = 0; i < 6; i++) {
+   
+    const cl=characters.length;
+    var r =(Math.floor(Math.random()*cl));
+    if(newArray.indexOf(r) === -1){
+        newArray +=characters.charAt(r);
+    }
+    
+    
+} */
+// console.log(`#${newArray}`);
+
+
+let rgbColor ='RGB(';
+for (let i = 0; i < 3; i++) {
+   
+    const cl=256;
+    var r =(Math.floor(Math.random()*cl));
+    rgbColor +=r;
+
+    if(i<2){
+        rgbColor+=',';
+    }
+    
+}
+rgbColor +=')';
+console.log(rgbColor);
+
+
+// Using the above countries array, create the following new array.
+
+const countries = [
+    'Albania',
+    'Bolivia',
+    'Canada',
+    'Denmark',
+    'Ethiopia',
+    'Finland',
+    'Germany',
+    'Hungary',
+    'Ireland',
+    'Japan',
+    'Kenya'
+  ]
+
+  /* let newCountryArray = [];
+//   let newCountryArrayLen = [];
+
+  for (let i = 0; i < countries.length; i++) {
+    const newCountry = countries[i].toUpperCase();
+    newCountryArray.push(newCountry);
+    newCountryArray.push(newCountry.length);
+    newCountryArray.push(newCountry.slice(0,3));
+  } */
+
+//   console.log(newCountryArray);
+//   console.log(newCountryArrayLen);
+
+//   Using the above countries array, create an array for countries length'.
+
+// In above countries array, check if there is a country or countries containing the word 'land'. If there are countries containing 'land', print it as array. If there is no country containing the word 'land', print 'All these countries are without land'.
+
+let newCoun = [];
+
+for (let i = 0; i < countries.length; i++) {
+    const element = countries[i];
+    // console.log(element);
+    if (element.indexOf('land') === 3) {
+        // console.log(element);
+        newCoun.push(element);
+    }else{
+        // newCoun.push(element);
+        console.log(element);
+    }
+    
+}
+console.log(newCoun);
