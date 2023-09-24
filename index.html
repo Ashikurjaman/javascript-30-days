@@ -1,17 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style>
+        p {
+            border: 1px solid black;
+            padding: 5px;
+            
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+        .container{
+            width: 90%;
+            margin: auto;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="container">
+        
+            <p>Et eos amet takimata amet dolor sadipscing magna et, rebum dolore diam dolor sadipscing amet duo ea.
+                Sadipscing accusam rebum aliquyam ea elitr diam sit sanctus, at lorem sed amet takimata tempor sit elitr
+                elitr diam, at amet sed diam et ipsum. Tempor sanctus magna et dolore ipsum et rebum invidunt, justo
+                eirmod nonumy sea sit amet et, amet clita justo et sadipscing dolore vero ut. Sadipscing et rebum
+                voluptua elitr et stet. Diam et labore diam accusam duo. Et consetetur sit sed rebum at consetetur sed
+                sed, aliquyam takimata vero aliquyam vero dolor erat. Amet diam dolores aliquyam sea invidunt invidunt
+                elitr. At takimata labore invidunt invidunt justo sit sed. Ipsum at sea rebum justo, consetetur diam et
+                dolore justo vero. Erat dolor eirmod sit et clita vero sit. Et elitr est accusam clita vero sit,
+                sadipscing at et sadipscing dolore clita ea erat sanctus sea. Sit ut et nonumy et dolor sed consetetur
+                sadipscing labore. Et sadipscing sed nonumy labore dolor accusam gubergren. Diam lorem lorem justo et
+                takimata no duo, nonumy amet et duo eirmod magna. Sed sit sed dolores sea sadipscing. Sea sed et
+                aliquyam no ea et at, at dolor voluptua et dolores duo voluptua nonumy no.  Sadipscing et
+                diam accusam ut, kasd sit erat lorem sit sadipscing, ut sit dolores labore et ut est gubergren sit. Et
+                tempor clita dolor lorem accusam. Dolor rebum ut amet sadipscing ipsum, amet ipsum justo gubergren
+                consetetur eos, sed gubergren nonumy amet takimata lorem sit ut.</p>
+           <form onsubmit="return false">
+            <input type="text" name="name" id="t" placeholder="Search value">
+            <input type="submit" value="Search" class="btn-primary">
+            <input type="text" name="name" id="r" placeholder="Replace value">
+            <input type="submit" id="clear" value="Replace" class="btn-primary">
+        </form>
+
+    </div>
 
 
-
-
-
-    <script src="script.js"></script>
 </body>
+
 </html>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+$(document).ready(function(){
+
+    $('input:submit').on('click',function(){
+        var searchText=$('#t').val();
+        var reg= new RegExp(searchText,'g');
+        var ht=$('p').html();
+        var newHtml=ht.replace(reg,'<span class="highlight">'+searchText+'</span>');
+        $('p').html(newHtml);
+    });
+    $(document).on('click','#clear',function(){
+        $('p').find('.highlight').each(function(){
+            var te=$(this).text();
+            var replacement=$('#r').val();
+            $(this).replaceWith('<span class="highlight">'+replacement+'</span>')
+        })
+    })
+});
+</script>
